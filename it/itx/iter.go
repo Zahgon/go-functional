@@ -2,10 +2,6 @@ package itx
 
 import (
 	"iter"
-	"maps"
-	"slices"
-
-	"github.com/BooleanCat/go-functional/v2/it"
 )
 
 type (
@@ -19,82 +15,68 @@ type (
 )
 
 // From converts an iterator in an [Iterator] to support method chaining.
-func From[V any](iterator func(func(V) bool)) Iterator[V] {
-	return Iterator[V](iterator)
-}
+func From[V any](iterator func(func(V) bool)) Iterator[V] { _ = "STUB: not implemented"; return nil }
 
 // From2 converts an iterator in an [Iterator2] to support method chaining.
 func From2[V, W any](iterator func(func(V, W) bool)) Iterator2[V, W] {
-	return Iterator2[V, W](iterator)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // FromSlice converts a slice to an [Iterator].
-func FromSlice[V any](slice []V) Iterator[V] {
-	return Iterator[V](slices.Values(slice))
-}
+func FromSlice[V any](slice []V) Iterator[V] { _ = "STUB: not implemented"; return nil }
 
 // FromMap converts a map to an [Iterator2].
-func FromMap[V comparable, W any](m map[V]W) Iterator2[V, W] {
-	return Iterator2[V, W](maps.All(m))
-}
+func FromMap[V comparable, W any](m map[V]W) Iterator2[V, W] { _ = "STUB: not implemented"; return nil }
 
 // Seq converts an [Iterator] to an [iter.Seq].
-func (iterator Iterator[V]) Seq() iter.Seq[V] {
-	return iter.Seq[V](iterator)
-}
+func (iterator Iterator[V]) Seq() iter.Seq[V] { _ = "STUB: not implemented"; return nil }
 
 // Seq converts an [Iterator2] to an [iter.Seq2].
-func (iterator Iterator2[V, W]) Seq() iter.Seq2[V, W] {
-	return iter.Seq2[V, W](iterator)
-}
+func (iterator Iterator2[V, W]) Seq() iter.Seq2[V, W] { _ = "STUB: not implemented"; return nil }
 
 // Collect is a convenience method for chaining [slices.Collect] on
 // [Iterator]s.
-func (iterator Iterator[V]) Collect() []V {
-	return slices.Collect(iter.Seq[V](iterator))
-}
+func (iterator Iterator[V]) Collect() []V { _ = "STUB: not implemented"; return nil }
 
 // ForEach is a convenience method for chaining [it.ForEach] on [Iterator]s.
-func (iterator Iterator[V]) ForEach(fn func(V)) {
-	it.ForEach(iterator, fn)
-}
+func (iterator Iterator[V]) ForEach(fn func(V)) { _ = "STUB: not implemented"; return }
 
 // ForEach is a convenience method for chaining [it.ForEach2] on [Iterator2]s.
-func (iterator Iterator2[V, W]) ForEach(fn func(V, W)) {
-	it.ForEach2(iterator, fn)
-}
+func (iterator Iterator2[V, W]) ForEach(fn func(V, W)) { _ = "STUB: not implemented"; return }
 
 // Find is a convenience method for chaining [it.Find] on [Iterator]s.
 func (iterator Iterator[V]) Find(predicate func(V) bool) (V, bool) {
-	return it.Find(iterator, predicate)
+	_ = "STUB: not implemented"
+	return *new(V), false
 }
 
 // Find is a convenience method for chaining [it.Find2] on [Iterator2]s.
 func (iterator Iterator2[V, W]) Find(predicate func(V, W) bool) (V, W, bool) {
-	return it.Find2(iterator, predicate)
+	_ = "STUB: not implemented"
+	return *new(V), *new(W), false
 }
 
 // Collect2 consumes an [iter.Seq2] and returns two slices of values.
 func (iterator Iterator2[V, W]) Collect() ([]V, []W) {
-	return it.Collect2(iterator)
+	_ = "STUB: not implemented"
+	return nil,
+
+		// Len is a convenience method for chaining [it.Len] on [Iterator]s.
+		nil
 }
 
-// Len is a convenience method for chaining [it.Len] on [Iterator]s.
-func (iterator Iterator[V]) Len() int {
-	return it.Len(iterator)
-}
+func (iterator Iterator[V]) Len() int { _ = "STUB: not implemented"; return 0 }
 
 // Len is a convenience method for chaining [it.Len2] on [Iterator2]s.
-func (iterator Iterator2[V, W]) Len() int {
-	return it.Len2(iterator)
-}
+func (iterator Iterator2[V, W]) Len() int { _ = "STUB: not implemented"; return 0 }
 
 // Drain is a convenience method for chaining [it.Drain] on [Iterator]s.
 func (iterator Iterator[V]) Drain() {
-	it.Drain(iterator)
+	_ = "STUB: not implemented"
+
+	// Drain2 is a convenience method for chaining [it.Drain2] on [Iterator2]s.
+	return
 }
 
-// Drain2 is a convenience method for chaining [it.Drain2] on [Iterator2]s.
-func (iterator Iterator2[V, W]) Drain() {
-	it.Drain2(iterator)
-}
+func (iterator Iterator2[V, W]) Drain() { _ = "STUB: not implemented"; return }

@@ -1,35 +1,39 @@
 package itx
 
-import "github.com/BooleanCat/go-functional/v2/it"
-
 // Filter is a convenience method for chaining [it.Filter] on [Iterator]s.
 func (iterator Iterator[V]) Filter(predicate func(V) bool) Iterator[V] {
-	return Iterator[V](it.Filter(iterator, predicate))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Exclude is a convenience method for chaining [it.Exclude] on [Iterator]s.
 func (iterator Iterator[V]) Exclude(predicate func(V) bool) Iterator[V] {
-	return Iterator[V](it.Exclude(iterator, predicate))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Filter is a convenience method for chaining [it.Filter2] on [Iterator2]s.
 func (iterator Iterator2[V, W]) Filter(predicate func(V, W) bool) Iterator2[V, W] {
-	return Iterator2[V, W](it.Filter2(iterator, predicate))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Exclude is a convenience method for chaining [it.Exclude2] on [Iterator2]s.
 func (iterator Iterator2[V, W]) Exclude(predicate func(V, W) bool) Iterator2[V, W] {
-	return Iterator2[V, W](it.Exclude2(iterator, predicate))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // FilterError is a convenience method for chaining [it.FilterError] on
 // [Iterator]s.
 func (iterator Iterator[V]) FilterError(predicate func(V) (bool, error)) Iterator2[V, error] {
-	return Iterator2[V, error](it.FilterError(iterator, predicate))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ExcludeError is a convenience method for chaining [it.ExcludeError] on
 // [Iterator]s.
 func (iterator Iterator[V]) ExcludeError(predicate func(V) (bool, error)) Iterator2[V, error] {
-	return Iterator2[V, error](it.ExcludeError(iterator, predicate))
+	_ = "STUB: not implemented"
+	return nil
 }

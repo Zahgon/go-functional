@@ -1,14 +1,13 @@
 package itx
 
-import "github.com/BooleanCat/go-functional/v2/it"
-
 // Transform is a convenience method for chaining [it.Map] on [Iterator]s where
 // the provided functions argument type is the same as its return type.
 //
 // This is a limited version of [it.Map] due to a limitation on Go's type
 // system whereby new generic type parameters cannot be defined on methods.
 func (iterator Iterator[V]) Transform(f func(V) V) Iterator[V] {
-	return Iterator[V](it.Map(iterator, f))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Transform is a convenience method for chaining [it.Map2] on [Iterator2]s
@@ -17,7 +16,8 @@ func (iterator Iterator[V]) Transform(f func(V) V) Iterator[V] {
 // This is a limited version of [it.Map2] due to a limitation on Go's type
 // system whereby new generic type parameters cannot be defined on methods.
 func (iterator Iterator2[V, W]) Transform(f func(V, W) (V, W)) Iterator2[V, W] {
-	return Iterator2[V, W](it.Map2(iterator, f))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // TransformError is a convenience method for chaining [it.MapError] on
@@ -27,5 +27,6 @@ func (iterator Iterator2[V, W]) Transform(f func(V, W) (V, W)) Iterator2[V, W] {
 // This is a limited version of [it.MapError] due to a limitation on Go's type
 // system whereby new generic type parameters cannot be defined on methods.
 func (iterator Iterator[V]) TransformError(f func(V) (V, error)) Iterator2[V, error] {
-	return Iterator2[V, error](it.MapError(iterator, f))
+	_ = "STUB: not implemented"
+	return nil
 }
